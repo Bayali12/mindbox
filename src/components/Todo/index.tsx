@@ -9,7 +9,7 @@ export const Todo: FC<TodoProps> = ({ todo, isCompleted, id }) => {
   const dispatch = useAppDispatch();
 
   const toggleTodoHandler = () => {
-    dispatch(toggleTodo(id));
+    id && dispatch(toggleTodo(id));
   };
 
   return (
