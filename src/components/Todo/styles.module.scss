@@ -1,0 +1,59 @@
+.todoWrapper {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  position: relative;
+  padding: 20px 40px;
+  border-bottom: 1px solid #e9e9e9;
+
+  .checkbox {
+    display: flex;
+    position: absolute;
+    top: 20;
+    left: 40px;
+    opacity: 0;
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    z-index: 1;
+
+    &:checked ~ .checkmark {
+      border: 1px solid #27c1a0;
+    }
+
+    &:checked ~ .checkmark:after {
+      opacity: 1;
+      border-color: #27c1a0;
+    }
+
+    &:checked ~ .todo {
+      text-decoration: line-through;
+      color: #a8a8a8;
+    }
+  }
+
+  .checkmark {
+    position: relative;
+    height: 30px;
+    width: 30px;
+    background-color: #fff;
+    transition: background-color 0.25s ease;
+    border-radius: 50%;
+    border: 1px solid #afafaf;
+
+    &:after {
+      content: '';
+      position: absolute;
+      left: 10px;
+      top: 3px;
+      width: 9px;
+      height: 18px;
+      border: solid #afafaf;
+      border-width: 0 1px 1px 0;
+      transform: rotate(35deg);
+      opacity: 0;
+      transition: opacity 0.25s ease;
+    }
+  }
+}

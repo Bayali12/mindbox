@@ -1,0 +1,10 @@
+.haeder {
+  display: flex;
+  justify-content: center;
+
+  .title {
+    font-size: 60px;
+    font-weight: 200;
+    text-transform: lowercase;
+  }
+}
